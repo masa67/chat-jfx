@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="chatclientapp.FXMLDocumentController">
+   <right>
+      <VBox prefHeight="295.0" prefWidth="179.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label text="Participants:">
+               <VBox.margin>
+                  <Insets bottom="5.0" left="10.0" top="10.0" />
+               </VBox.margin>
+            </Label>
+            <ListView fx:id="userList" prefHeight="298.0" prefWidth="178.0" />
+         </children>
+      </VBox>
+   </right>
+   <left>
+      <TextArea fx:id="chatMessageArea" editable="false" prefHeight="295.0" prefWidth="422.0" BorderPane.alignment="CENTER" />
+   </left>
+   <bottom>
+      <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="105.0" prefWidth="600.0">
+               <children>
+                  <HBox prefHeight="49.0" prefWidth="600.0">
+                     <children>
+                        <Button fx:id="loginButton" mnemonicParsing="false" onAction="#tryLogin" text="Login">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <TextField fx:id="name" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="sendButton" disable="true" mnemonicParsing="false" onAction="#sendChatMessage" text="Send">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Button>
+                        <TextField fx:id="chatMessage" disable="true" editable="false">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="5.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+               <HBox.margin>
+                  <Insets top="10.0" />
+               </HBox.margin>
+            </VBox>
+            <VBox prefHeight="100.0" prefWidth="673.0">
+               <children>
+                  <Label text="Send Private Message:">
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </Label>
+                  <HBox prefHeight="100.0" prefWidth="200.0">
+                     <children>
+                        <CheckBox fx:id="sendPrivateCheckbox" mnemonicParsing="false">
+                           <graphic>
+                              <Label text="To:">
+                                 <padding>
+                                    <Insets right="5.0" />
+                                 </padding>
+                              </Label>
+                           </graphic>
+                        </CheckBox>
+                        <TextField fx:id="privateUser" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </bottom>
+</BorderPane>
